@@ -4,27 +4,26 @@ public class Group {
     private String name;
     private int numberOfParticipants;
 
-    Group(String name, int numberOfParticipants){
-        this.name=name;
-        this.numberOfParticipants=numberOfParticipants;
-    }
-    public Group(){
-
+    //constructor
+    public Group(String name, int numberOfParticipants) {
+        this.name = name;
+        this.numberOfParticipants = numberOfParticipants;
     }
 
-    public void setName(String name){
-        this.name=name;
+    //getter and setter
+    public String getName() {
+        return name;
     }
 
-    public String getName(){
-        return this.name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setNumberOfParticipants(int numberOfParticipants){
-        this.numberOfParticipants=numberOfParticipants;
+    public int getNumberOfParticipants() {
+        return numberOfParticipants;
     }
 
-    public int getNumberOfParticipants(){
-        return this.numberOfParticipants;
+    public void setNumberOfParticipants(int numberOfParticipants) {
+        this.numberOfParticipants = numberOfParticipants;
     }
 }
