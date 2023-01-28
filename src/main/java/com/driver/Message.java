@@ -7,37 +7,45 @@ public class Message {
     private String content;
     private Date timestamp;
 
-    Message(String content, int id){
-        this.content=content;
-        Date obj = new Date();
-        this.timestamp=obj;
-        this.id=id;
+    public Message(int id) {
+        this.id = id;
+        this.timestamp = new Date();
     }
-//    public Message{
-//
-//    }
 
-    public void setId(int id){
-        this.id=id;
+    public Message(int id, String content) {
+        this.id = id;
+        this.content = content;
+        this.timestamp = new Date();
     }
+
+    public Message(int id, String content, Date timestamp) {
+        this.id = id;
+        this.content = content;
+        this.timestamp = timestamp;
+    }
+
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getContent() {
+        return content;
     }
 
     public void setContent(String content) {
         this.content = content;
     }
 
-    public String getContent(){
-        return this.content;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
-    public void setTimestamp(Date timestamp){
-        this.timestamp=timestamp;
-    }
-
-    public Date getTimestamp(){
-        return this.timestamp;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 }
