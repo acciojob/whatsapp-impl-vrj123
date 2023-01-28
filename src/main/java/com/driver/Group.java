@@ -8,6 +8,9 @@ public class Group {
         this.name=name;
         this.numberOfParticipants=numberOfParticipants;
     }
+    public Group(){
+
+    }
 
     public void setName(String name){
         this.name=name;

@@ -13,6 +13,9 @@ public class Message {
         this.timestamp=obj;
         this.id=id;
     }
+//    public Message{
+//
+//    }
 
     public void setId(int id){
         this.id=id;

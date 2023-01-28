@@ -14,6 +14,8 @@ public class WhatsappRepository {
     private HashMap<Message, User> senderMap;
     private HashMap<Group, User> adminMap;
     private HashSet<String> userMobile;
+    private HashMap<String, User> userMap;
+    private HashMap<Integer, Message> messageMap;
     private int customGroupCount;
     private int messageId;
 
@@ -22,7 +24,9 @@ public class WhatsappRepository {
         this.groupUserMap = new HashMap<Group, List<User>>();
         this.senderMap = new HashMap<Message, User>();
         this.adminMap = new HashMap<Group, User>();
+        this.userMap = new HashMap<String, User>();
         this.userMobile = new HashSet<>();
+        this.messageMap = new HashMap<Integer, Message>();
         this.customGroupCount = 0;
         this.messageId = 0;
     }
@@ -31,8 +35,10 @@ public class WhatsappRepository {
         if(userMobile.contains(mobile)) {
             throw new Exception("User already exists");
         }
+        User user=new User(name, mobile);
+        userMap.put(name, user);
         userMobile.add(mobile);
-        return "User successfully added";
+        return "SUCCESS";
     }
 
     public Group createGroup(List<User> users){
@@ -47,12 +53,14 @@ public class WhatsappRepository {
         Group group=new Group(groupName, users.size());
         groupUserMap.put(group, users);
         adminMap.put(group, users.get(0));
+        groupMessageMap.put(group, new ArrayList<Message>());
         return group;
     }
 
     public int createMessage(String content){
         messageId++;
         Message message=new Message(content, messageId);
+        messageMap.put(messageId, message);
         return messageId;
     }
 
