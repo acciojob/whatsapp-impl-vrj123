@@ -52,7 +52,7 @@ public class WhatsappRepository {
 
     public int createMessage(String content){
         messageId++;
-        Message message=new Message(content);
+        Message message=new Message(content, messageId);
         return messageId;
     }
 
